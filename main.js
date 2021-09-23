@@ -9,7 +9,7 @@ app.use(bodyparser.json())
 
 app.use('/quotes', quotes)
 
-app.get('/', async function (req, res) {
+app.get('/', function (req, res) {
   res.send('Welcome to my Api lol')
 });
 
