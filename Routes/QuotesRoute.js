@@ -4,8 +4,17 @@ const Quotes = require('../Models/Quotes')
 
 
 routes.get('/', async function(req, res){
-    const Quote = await Quotes.find();
-    res.json(Quote);
+    
+    try {
+        const Quote = await Quotes.find();
+        res.json(Quote);
+        
+    } catch (error) {
+        
+        console.log(error)
+    }
+    
+   
 });
 
 
@@ -16,8 +25,15 @@ routes.post('/', async function(req, res){
         Quote: req.body.Quote
     });
       
-   const quote = await Quote.save()
-    res.json(quote);
+     try {
+        const quote = await Quote.save()
+        res.json(quote);
+        
+    } catch (error) {
+
+        console.log(error)
+    }
+   
 });
 
 
